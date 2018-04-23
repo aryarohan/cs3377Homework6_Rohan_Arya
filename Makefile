@@ -1,7 +1,7 @@
 #
-# UTD CS3377 CDK Example
-# Dr. Perkins
-# stephen.perkins@utdallas.edu
+# Rohan Arya
+# CS 3377.502
+# rxa160430@utdallas.edu
 #
 
 CXX = g++
@@ -15,9 +15,9 @@ LDLIBS = -lcdk -lcurses
 # PROJECTNAME is a descriptive name used for the backup target
 # This should not contain spaces or special characters
 
-EXECFILE = cdkexample
+EXECFILE = Program6
 
-OBJS = cdkexample.o
+OBJS = program6.o
 
 
 all: $(EXECFILE)
