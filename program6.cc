@@ -50,6 +50,11 @@ main ()
   BinaryFileHeader *temp = new BinaryFileHeader ();
 
   ifstream input_file ("cs3377.bin", ios::in | ios::binary);
+  if(!input_file.is_open())
+    {
+      cout<<"Error opening file!\n";
+      exit(-1);
+    }
   input_file.read ((char *) temp, sizeof (BinaryFileHeader));
   // Remember that matrix starts out at 1,1.
   // Since arrays start out at 0, the first entries
@@ -128,7 +133,7 @@ main ()
       stringstream ss1, ss2;
       ss2 << temp1->stringBuffer;
       s2 += ss2.str ();
-      ss1 << "strlen: " << s2.length ();
+      ss1 << "strlen: " << static_cast<uint16_t> (temp1->strLength);
       s1 += ss1.str ();
 
       setCDKMatrixCell (myMatrix, i, 1, s1.c_str ());
